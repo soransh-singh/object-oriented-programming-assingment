@@ -1,3 +1,7 @@
-*.pdf
 .vscode
+*.pdf
+*.docx
 *.exe
+*.cpp~
+*.cpp.un~
+*.swp
