@@ -23,7 +23,7 @@ class Largest{
         num[2]=n3;
     }
 
-    Largest(n1, n2, n3){
+    Largest(int n1,int n2,int n3){
         num[0]=n1;
         num[1]=n2;
         num[2]=n3;
