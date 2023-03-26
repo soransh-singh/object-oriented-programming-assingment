@@ -1,4 +1,5 @@
 /*
+// Assingment 1
 // 5. Write a C++ program to add two complex numbers using class Complex 
 // having real and imag as data members.
 
@@ -15,6 +16,14 @@
 // b) To display the result
 */ 
 
+/*
+// Assingment 2
+// . Write a Program to add two complex number objects of class Complex having 
+// real and imag as data members by overloading ‘+’ operator 
+// a)Using Member function. 
+// b)Using Friend Function. 
+*/
+
 #include<bits/stdc++.h>
 
 using namespace std;
@@ -26,9 +35,12 @@ public:
     Complex();
     Complex(int n);
     Complex(int real, int img);
-
+    Complex operator+(Complex C1, Complex C2);
     friend Complex add(Complex C1, Complex C2);
+    friend Complex operator+(Complex C1, Complex C2);
+    
     friend void display(Complex C);
+
 };
 
 
@@ -42,6 +54,24 @@ Complex::Complex(int n){
 
 Complex::Complex(int real, int img){
     num = make_pair(real, img);
+}
+
+Complex::Complex operator+(Complex C1, Complex C2){
+    Complex out;
+    int real, img;
+    real = C1.num.first + C2.num.first;
+    img = C1.num.second + C2.num.second;
+    out.num = make_pair(real, img);
+    return out;
+}
+
+Complex operator+(Complex C1, Complex C2){
+    Complex out;
+    int real, img;
+    real = C1.num.first + C2.num.first;
+    img = C1.num.second + C2.num.second;
+    out.num = make_pair(real, img);
+    return out;
 }
 
 Complex add(Complex C1, Complex C2){

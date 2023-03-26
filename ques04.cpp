@@ -1,4 +1,4 @@
-/*
+/* Assingment 2
 // 4. Create a class Time to add Two times provided in hour-minute format. Use member
 // functions
 // a. void input() to provide hour and minute.
