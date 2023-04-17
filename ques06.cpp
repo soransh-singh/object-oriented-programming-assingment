@@ -13,7 +13,7 @@ class Number{
     }
 
     string operator!(){
-        return (num%2==0?"True":"False");
+        return (num%2==0?"Even":"Odd");
     }
 };
 

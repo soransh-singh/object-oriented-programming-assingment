@@ -59,7 +59,11 @@ bool operator<(Distance d1, Distance d2){
 }
 
 void Distance::operator+=(Distance d2){
-
+    dis.second = dis.second + d2.dis.second;
+    dis.second %= 12;
+    int temp = dis.second/12;
+    dis.first = dis.first + d2.dis.first + temp;
+    
 }
 
 
@@ -68,5 +72,8 @@ int main(){
     Distance d1(5,4), d2(5,6);
     d1.show();
     cout<<(d1<d2);
+    cout<<endl;
+    d1+=d2;
+    d1.show();
     return 0;
 }

@@ -35,9 +35,9 @@ public:
     Complex();
     Complex(int n);
     Complex(int real, int img);
-    Complex operator+(Complex C1, Complex C2);
+    Complex operator+(Complex C2);
     friend Complex add(Complex C1, Complex C2);
-    friend Complex operator+(Complex C1, Complex C2);
+    // friend Complex operator+(Complex C1, Complex C2);
     
     friend void display(Complex C);
 
@@ -56,23 +56,23 @@ Complex::Complex(int real, int img){
     num = make_pair(real, img);
 }
 
-Complex::Complex operator+(Complex C1, Complex C2){
+Complex Complex::operator+(Complex C2){
     Complex out;
     int real, img;
-    real = C1.num.first + C2.num.first;
-    img = C1.num.second + C2.num.second;
+    real = num.first + C2.num.first;
+    img = num.second + C2.num.second;
     out.num = make_pair(real, img);
     return out;
 }
 
-Complex operator+(Complex C1, Complex C2){
-    Complex out;
-    int real, img;
-    real = C1.num.first + C2.num.first;
-    img = C1.num.second + C2.num.second;
-    out.num = make_pair(real, img);
-    return out;
-}
+// Complex operator+(Complex C1, Complex C2){
+//     Complex out;
+//     int real, img;
+//     real = C1.num.first + C2.num.first;
+//     img = C1.num.second + C2.num.second;
+//     out.num = make_pair(real, img);
+//     return out;
+// }
 
 Complex add(Complex C1, Complex C2){
     Complex out;
@@ -90,7 +90,7 @@ int main(){
     Complex c1(4), c2(4,3);
     display(c1);
     display(c2);
-    Complex c3= add(c1,c2);
+    Complex c3= c1 + c2;
     display(c3);
     return 0;
 }
