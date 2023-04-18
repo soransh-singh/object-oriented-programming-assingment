@@ -5,3 +5,4 @@
 *.cpp~
 *.cpp.un~
 *.swp
+/outputs
